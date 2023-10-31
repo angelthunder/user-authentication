@@ -1,5 +1,7 @@
 class LoginsController < ApplicationController
   def new
+    user = User.find_by(id: session[:user_id])
+    redirect_to dashboards_path if user.present? 
     @user = User.new
   end
 
@@ -7,6 +9,7 @@ class LoginsController < ApplicationController
     @user = User.find_by(login_params)
 
     if @user.present?
+      session[:user_id] = @user.id
       redirect_to dashboards_path
     else
       flash[:alert] = "email or password is wrong!"
