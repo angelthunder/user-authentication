@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action -> { redirect_to_login unless logged_in? }, only: %i[new create]
+  before_action -> { redirect_to_login unless logged_in? },
+    only: %i[new create edit update]
 
   def index
     @posts = Post.all
@@ -18,6 +19,24 @@ class PostsController < ApplicationController
     else
       flash[:alert] = "couldn't save post"
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    @post = current_user.posts.find_by(id: params[:id])
+    redirect_to posts_path unless @post.present?
+  end
+
+  def update
+    @post = current_user.posts.find_by(id: params[:id])
+    redirect_to posts_path unless @post.present?
+
+    if @post.update(post_params)
+      flash[:notice] = "successful post updated"
+      redirect_to posts_path
+    else
+      flash[:alert] = "couldn't save post"
+      render :edit, status: :forbidden
     end
   end
 

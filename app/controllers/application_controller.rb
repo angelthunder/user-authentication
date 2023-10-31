@@ -1,9 +1,7 @@
 class ApplicationController < ActionController::Base
-  private
+  include ApplicationHelper
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id])
-  end
+  private
 
   def logged_in?
     !current_user.nil?

@@ -8,6 +8,14 @@
         y <span><%= post.author.email %></span>
       </h3>
       <p><%= post.body %></p>
+      <p>
+        <span>
+          <%= link_to("details", post_path(post)) %> 
+        </span> |
+        <span>
+          <%= link_to("edit", edit_post_path(post)) if current_user?(post.author) %> 
+        </span>
+      </p>
     </div>
   <% end %>
 </div>
