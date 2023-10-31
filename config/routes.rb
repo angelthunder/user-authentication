@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :posts, only: %i[new create]
+  resources :posts, only: %i[index new create]
   resources :dashboards, only: %i[index]
   resources :logins, only: %i[new create]
   resources :registrations, only: %i[new create]

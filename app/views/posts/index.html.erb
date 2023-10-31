@@ -1,0 +1,13 @@
+<h1>Posts#index</h1>
+
+<div>
+  <% @posts.each do |post| %>
+    <div>
+      <h3>
+        <%= post.title %> 
+        y <span><%= post.author.email %></span>
+      </h3>
+      <p><%= post.body %></p>
+    </div>
+  <% end %>
+</div>
