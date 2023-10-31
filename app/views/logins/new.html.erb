@@ -1,4 +1,4 @@
-<h1>log in</h1>
+<h1>login</h1>
 
 <%= form_with model: @user, url: logins_path do |form| %> 
   <div>
@@ -12,7 +12,12 @@
   </div>
 
   <div>
-    <%= form.submit "sign in" %>
+    <%= form.submit "login" %>
   </div>
 <% end %>
+
+<div>
+  <p>You do not have an account?</p>
+  <%= link_to "Signup", new_registration_path %>
+</div>
 

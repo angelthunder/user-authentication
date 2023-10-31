@@ -1,0 +1,17 @@
+<div>
+  <ul>
+    <li><%= link_to "Posts", posts_path %></li>
+    <% if logged_in? %>
+      <li>
+        <%= form_with url: login_path(session[:user_id]),
+          method: :post do %>
+          <%= hidden_field_tag :_method, "DELETE" %>
+
+          <%= submit_tag "logout" %>
+        <% end %>
+      </li>
+    <% else %>
+      <li><%= link_to "Login", new_login_path %></li>
+    <% end %>
+  </ul>
+</div>

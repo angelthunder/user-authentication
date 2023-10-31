@@ -4,6 +4,10 @@ module ApplicationHelper
   end
 
   def current_user?(other)
-    other.is_a?(current_user.class) && other.id == current_user.id
+    current_user.eql?(other)
+  end
+
+  def logged_in?
+    !!current_user
   end
 end

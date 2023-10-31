@@ -3,4 +3,8 @@ class User < ApplicationRecord
 
   validates :email, presence: true
   validates :password, presence: true
+
+  def eql?(other)
+    other.is_a?(self.class) && other.id == id
+  end
 end
