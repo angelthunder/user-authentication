@@ -4,17 +4,11 @@
   <%= link_to "Create", new_post_path %>
 <% end %>
 
-<div>
+<section>
   <% @posts.each do |post| %>
-    <div>
-      <h3><%= post.title %> y <span><%= post.author.email %></span></h3>
-      <p><%= post.body %></p>
-      <p>
-        <% if current_user?(post.author) %> 
-          <span> | </span>
-          <span><%= link_to("edit", edit_post_path(post)) %></span>
-        <% end %>
-      </p>
-    </div>
+    <article>
+      <p><strong><%= post.title %></strong> - <%= post.author.email %></p>
+      <%= link_to "show", post_path(post) %>
+    </article>
   <% end %>
-</div>
+</section>
