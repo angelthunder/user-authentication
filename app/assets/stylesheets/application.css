@@ -13,6 +13,8 @@
  *= require_tree .
  *= require body
  *= require navbar
+ *= require main
+ *= require form
  *= require_self
  */
 

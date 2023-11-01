@@ -1,23 +1,17 @@
-<h1>sign up</h1>
+<div class="form-container">
+  <h2>Signup</h2>
 
-<%= form_with model: @user, url: registrations_path do |form| %> 
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
+  <%=
+    render partial: "users/form",
+      locals: {
+        user: @user,
+        form_path: registrations_path,
+        submit_button: "Signup",
+      }
+  %>
 
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div>
-    <%= form.submit "sign up" %>
-  </div>
-<% end %>
-
-<div>
-  <p>Do you already have an account?</p>
-  <%= link_to "Login", new_login_path %>
+  <p class="info-text">
+    Already have an account? <%= link_to "Login", new_login_path %>
+  </p>
 </div>
 
