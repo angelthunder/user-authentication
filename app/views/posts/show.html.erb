@@ -2,6 +2,6 @@
 
 <%= render @post %> 
 
-<% if current_user?(@post.author) %> 
+<% if logged_in? && current_user?(@post.author) %> 
   <%= link_to "edit", edit_post_path(@post) %>
 <% end %>
