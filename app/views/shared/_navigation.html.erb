@@ -4,16 +4,16 @@
   <ul class="navbar-menu">
     <li><%= link_to "Posts", posts_path %></li>
 
-    <% unless logged_in? %>
-    <li><%= link_to "Login", new_login_path %></li>
-    <% else %>
     <li>
-      <%= form_with url: login_path(session[:user_id]), method: :post do %>
-        <%= hidden_field_tag :_method, "DELETE" %>
+      <% unless logged_in? %>
+        <%= link_to "Login", new_login_path %></li>
+      <% else %>
+        <%= form_with url: login_path(session[:user_id]), method: :post do %>
+          <%= hidden_field_tag :_method, "DELETE" %>
 
-        <%= submit_tag "Logout" %>
+          <%= submit_tag "Logout" %>
+        <% end %>
       <% end %>
     </li>
-    <% end %>
   </ul>
 </div>

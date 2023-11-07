@@ -10,14 +10,23 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= render "shared/navigation" %>
+  <body class="body">
+    <div>
+      <header>
+        <%#= render "shared/navigation" %>
+      </header>
 
-    <div><%= notice %></div>
-    <div><%= alert %></div>
+      <div class="server-messages">
+        <% if notice %>
+          <p class="server-messages_notice"><%= notice %></p>
+        <% end %>
 
-    <main>
+        <% if alert %>
+          <p class="server-messages_alert"><%= alert %></p>
+        <% end %>
+      </div>
+
       <%= yield %>
-    </main>
+    </div>
   </body>
 </html>
