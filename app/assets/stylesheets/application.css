@@ -1,8 +1,8 @@
 /*
  *= require_directory ./config
  *= require_directory ./reset
- *  require_directory ./utilities
- *  require_directory ./library
+ *= require_directory ./utilities
+ *= require_directory ./library
  *  require_directory ./base
  *  require_directory ./components/landing
  *= require_self

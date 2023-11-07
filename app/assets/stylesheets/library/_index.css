@@ -1,0 +1,6 @@
+/*
+ * This load 3rd parties, plugins, and vendors.
+ * Also you can extend overrides for those.
+ * 
+ *= require ./variables
+ */

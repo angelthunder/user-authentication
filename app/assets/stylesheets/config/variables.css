@@ -1,0 +1,96 @@
+:root {
+  /* colors */
+  --grey: #f4f4f4;
+  --grey-2: #555;
+  --green: #33e17c;
+  --black: #181818;
+  --white: #fff;
+  --ligth-blue: #3498db;
+
+  /* Text */
+  --ff-default: "IBM Plex Sans", sans-serif;
+  --ff-primary: "Merriweather", serif;
+  --max-width: 80rem;
+  --primary-color: var(--ligth-blue);
+  --primary-color-2: var(--green);
+  --secondary-color: var(--white);
+  --dark-color: var(--black);
+
+  /* Typography */
+  --base-font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  "sans-serif";
+  --heading-font-family: var(--base-font-family);
+
+  --medium-font-weight: 400;
+
+  --base-font-size: 1em;
+
+  --bold-font-weight: 700;
+
+  --base-line-height: 1.5;
+  --heading-line-height: 1.2;
+
+
+  /* Other Sizes */
+  --base-border-radius: 4px;
+  --base-spacing: var(--base-line-height) * 1em;
+  --small-spacing: var(--base-spacing) * 0.5;
+
+
+  /* Colors */
+  --white: #fff;
+  --black: #000;
+
+  --blue: #1976d2;
+  --red: #d32f2f;
+
+  --light-purple: #EEEBFF;
+  --dark-purple: #523F87;
+  --purple: #695997;
+  --light-yellow: #fff6bf;
+  --light-red: #fbe3e4;
+  --light-green: #e6efc2;
+  --light-blue: #ECF3FA;
+
+  --grey-0: #f6f7f7;
+  --grey-1: #dfe0e1;
+  --grey-2: #BEC4C8;
+  --grey-5: #adb5bd;
+  --grey-7: #293f54;
+
+  --hint-grey: #7b808c;
+
+
+  /* Font Colors */
+  --base-font-color: var(--grey-7);
+  --action-color: var(--blue);
+
+
+  /* Background Colors */
+  --base-background-color: var(--grey-0);
+
+
+  /* Focus */
+  --focus-outline-color: transparentize(var(--action-color), 0.4);
+  --focus-outline-width: 3px;
+  --focus-outline: var(--focus-outline-width) solid var(--focus-outline-color);
+  --focus-outline-offset: 1px;
+
+
+  /* Flash Colors */
+  --flash-alert: var(--light-yellow);
+  --flash-error: var(--light-red);
+  --flash--notice: var(--light-blue);
+  --flash--success: var(--light-green);
+
+
+  /* Border */
+  --base-border-color: var(--grey-1);
+  --base-border: 1px solid var(--base-border-color);
+
+
+  /* Transitions */
+  --base-duration: 250ms;
+  --base-timing: ease-in-out;
+}

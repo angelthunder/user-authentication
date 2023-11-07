@@ -1,0 +1,9 @@
+/*
+ * This styles applies for html-tags
+ *
+ *= require ./forms
+ *= require ./layout
+ *= require ./lists
+ *= require ./tables
+ *= require ./typography
+ */
