@@ -31,6 +31,20 @@ class PostsController < ApplicationController
     redirect_to posts_path, alert: "Couldn't edit this post" if @post.nil?
   end
 
+  def update
+    @post = current_user.posts.find_by(id: params[:id])
+
+    redirect_to posts_path, alert: "Couldn't update post" if @post.nil?
+
+    if @post.update(post_params)
+      flash[:notice] = "Successful post updated"
+      redirect_to posts_path
+    else
+      flash[:alert] = "Couldn't update post"
+      render :edit, status: :forbidden
+    end
+  end
+
   private
 
   def post_params
