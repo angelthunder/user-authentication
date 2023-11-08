@@ -16,6 +16,15 @@ class LoginsController < ApplicationController
     end
   end
 
+  def destroy
+    if current_user.id == params[:id].to_i
+      session[:user_id] = nil
+      redirect_to root_path, alert: "You have successfully logged out"
+    else
+      redirect_to root_path, notice: "You can not log out"
+    end
+  end
+
   private
 
   def login_params
