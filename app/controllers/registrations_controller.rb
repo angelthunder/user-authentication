@@ -10,7 +10,7 @@ class RegistrationsController < ApplicationController
       flash[:notice] = "successful registration"
       redirect_to(new_login_path)
     else
-      flash[:alert] = "couldn't save registration"
+      flash[:alert] = @user.errors.full_messages
       render :new, status: :unprocessable_entity
     end
   end
