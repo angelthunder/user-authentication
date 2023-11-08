@@ -1,0 +1,14 @@
+<h1>Posts#index</h1>
+
+<% if user_logged_in? %>
+  <%= link_to "Create", new_post_path %>
+<% end %>
+
+<section>
+  <% @posts.each do |post| %>
+    <article>
+      <p><strong><%= post.title %></strong> - <%= post.author.email %></p>
+      <%= link_to "show", post_path(post) %>
+    </article>
+  <% end %>
+</section>
