@@ -1,9 +1,25 @@
 class PostsController < ApplicationController
   before_action lambda {
     redirect_to new_login_path unless user_logged_in?
-  }, only: %i[new]
+  }, only: %i[new create]
 
   def new
     @post = current_user.posts.build
+  end
+
+  def create
+    @post = current_user.posts.build(post_params)
+
+    if @post.save
+      redirect_to posts_path, notice: "Successful post created"
+    else
+      render :new, status: :unprocessable_entity, alert: "Couldn't save post"
+    end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body)
   end
 end
