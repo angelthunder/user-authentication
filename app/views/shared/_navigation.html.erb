@@ -1,5 +1,6 @@
 <div>
   <ul>
+    <%= link_to "Posts", posts_path %></li>
     <li>
       <% if user_logged_in? %>
         <%= form_with url: login_path(session[:user_id]),

@@ -3,6 +3,10 @@ class PostsController < ApplicationController
     redirect_to new_login_path unless user_logged_in?
   }, only: %i[new create]
 
+  def index
+    @posts = Post.all
+  end
+
   def new
     @post = current_user.posts.build
   end
