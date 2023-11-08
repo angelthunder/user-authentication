@@ -6,4 +6,11 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
   validates :body, presence: true
+
+  private
+
+  def eql?(other)
+    other.class == self.class &&
+      other.id == id
+  end
 end

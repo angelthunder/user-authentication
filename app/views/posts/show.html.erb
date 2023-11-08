@@ -1,0 +1,7 @@
+<h1>Post#show</h1>
+
+<%= render @post %> 
+
+<% if user_logged_in? && current_user?(@post.author) %> 
+  <%= link_to "edit", edit_post_path(@post) %>
+<% end %>
