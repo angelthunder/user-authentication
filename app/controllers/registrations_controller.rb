@@ -1,4 +1,8 @@
 class RegistrationsController < ApplicationController
+  before_action lambda {
+    redirect_to dashboards_path if user_logged_in?
+  }, only: %i[new create]
+
   def new
     @user = User.new
   end

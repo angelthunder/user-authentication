@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :dashboards, only: %i[index]
   resources :logins, only: %i[new create destroy]
   resources :registrations, only: %i[new create]
 
@@ -8,5 +9,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "dashboards#index"
 end
