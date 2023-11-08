@@ -25,6 +25,12 @@ class PostsController < ApplicationController
     @post ||= Post.find_by(id: params[:id])
   end
 
+  def edit
+    @post = current_user.posts.find_by(id: params[:id])
+
+    redirect_to posts_path, alert: "Couldn't edit this post" if @post.nil?
+  end
+
   private
 
   def post_params
