@@ -1,5 +1,30 @@
 <h1>People</h1>
 
+<%
+=begin
+  Subscription to strem
+  `teststr` will be encrypted over the attribute signed-stream-name from
+  turbo-cable-stream-source HTML tag
+=end
+%>
+<%= turbo_stream_from "teststr" %>
+
+<%
+=begin
+  you can test if from rails console
+  `Turbo::StreamsChannel.broadcast_update_to(
+    "teststr",
+    target: "broadcast",
+    html: "foo"
+  )`
+  Note: If you want to try out Turbo Streams from the console, use the
+  redis adapter in cable.yml. And you also need to have Redis installed and
+  running on your machine.
+=end
+%>
+<div id="broadcasts"></div>
+<br />
+
 <hr />
 Total: <span class="counter"><%= @count %></span>
 
