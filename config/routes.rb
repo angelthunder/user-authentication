@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   resources :logins, only: %i[new create destroy]
   resources :registrations, only: %i[new create]
 
+  get "/first", to: "site#first", as: :first_page
+  get "/second", to: "site#second", as: :second_page
+  post "/third", to: "site#third", as: :third_page
+
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
