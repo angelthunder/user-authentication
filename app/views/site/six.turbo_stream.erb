@@ -6,3 +6,10 @@
   </tr>
 <% end %>
 
+<%= turbo_stream.update "counter" do %>
+  <%= @count %>
+<% end %>
+
+<%= turbo_stream.replace "hidden-counter" do %>
+  <%= hidden_field_tag :count, nil, id: "hidden-counter", value: @count %>
+<% end %>

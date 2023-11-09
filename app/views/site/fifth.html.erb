@@ -31,9 +31,14 @@
 </table>
 
 <%= form_with url: six_page_path, scope: "person" do |f| %>
+  <%= hidden_field_tag :count, nil, id: "hidden-counter", value: @count %>
+
   <%= f.text_field :name, placeholder: "Name" %>
   <%= f.email_field :email, placeholder: "Email" %>
   <%= f.number_field :age, placeholder: "Age", in: 0..150, step: 1 %>
 
   <%= f.submit :save %>
 <% end %>
+
+<hr/>
+Total: <span id="counter"><%= @count %></span>

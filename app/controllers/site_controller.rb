@@ -9,9 +9,12 @@ class SiteController < ApplicationController
 
   def fourth; end
 
-  def fifth; end
+  def fifth
+    @count = 3
+  end
 
   def six
     @name, @email, @age = params[:person].values_at(:name, :email, :age)
+    @count = params[:count].to_i + 1
   end
 end
