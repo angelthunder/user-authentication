@@ -8,4 +8,10 @@ class SiteController < ApplicationController
   end
 
   def fourth; end
+
+  def fifth; end
+
+  def six
+    @name, @email, @age = params[:person].values_at(:name, :email, :age)
+  end
 end

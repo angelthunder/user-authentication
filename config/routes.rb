@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get "/second", to: "site#second", as: :second_page
   post "/third", to: "site#third", as: :third_page
   get "/fourth", to: "site#fourth", as: :fourth_page
+  get "/fifth", to: "site#fifth", as: :fifth_page
+  post "/six", to: "site#six", as: :six_page
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

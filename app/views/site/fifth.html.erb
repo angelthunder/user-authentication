@@ -1,0 +1,39 @@
+<h1>People</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+
+  <tbody id="people">
+    <tr>
+      <td>John</td>
+      <td>john@mail.com</td>
+      <td>25</td>
+    </tr>
+
+    <tr>
+      <td>Emliy</td>
+      <td>emily@mail.com</td>
+      <td>43</td>
+    </tr>
+
+    <tr>
+      <td>Aldo</td>
+      <td>aldo@mail.com</td>
+      <td>78</td>
+    </tr>
+  </tbody>
+</table>
+
+<%= form_with url: six_page_path, scope: "person" do |f| %>
+  <%= f.text_field :name, placeholder: "Name" %>
+  <%= f.email_field :email, placeholder: "Email" %>
+  <%= f.number_field :age, placeholder: "Age", in: 0..150, step: 1 %>
+
+  <%= f.submit :save %>
+<% end %>
