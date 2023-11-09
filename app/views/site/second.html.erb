@@ -1,2 +1,20 @@
 <h1>Site#second</h1>
 <p>Find me in app/views/site/second.html.erb</p>
+
+<%= turbo_frame_tag "some_id" do %>
+  <pre>Hello Turbo Frame!</pre>
+<% end %>
+
+<%= turbo_frame_tag "some_other_different_id" do %>
+  <pre>The ID should be the "some_id"</pre>
+<% end %>
+
+<%= turbo_frame_tag "form_id" do %>
+  <p>Something else</p>
+<% end %>
+
+<%= turbo_frame_tag "other_id" do %>
+  <h2>Other Something Else</h2>
+<% end %>
+
+<%= turbo_frame_tag "fourth_id", src: "/fourth" %>

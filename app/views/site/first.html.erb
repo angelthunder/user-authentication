@@ -1,4 +1,32 @@
 <h1>Site#first</h1>
 <p>Find me in app/views/site/first.html.erb</p>
 
-<%= link_to "Second", second_page_path, data: { turbo: false } %>
+<%= turbo_frame_tag "some_id" do %>
+  <%# With Turbo Frames, you can specify where the reponse will be placed %> 
+  <%= link_to "Second", second_page_path, data: { turbo_frame: "other_id" } %>
+
+  <%# To get out of the frame to a new document %>
+  <%# Keep in mind, if you render entire document instead of a fragment %>
+  <%# It will render all internal frames of the view template %>
+  <%=
+    link_to "Second top target",
+      second_page_path,
+      target: "_top",
+      loading: "lazy"
+  %>
+<% end %>
+
+<hr />
+<%= turbo_frame_tag "form_id" do %>
+  <%= form_with url: third_page_path do |f| %>
+    <%= f.text_field :name %>
+
+    <%= f.submit %>
+  <% end %>
+<% end %>
+
+<hr />
+<%= turbo_frame_tag "other_id" %>
+
+<hr />
+<%= turbo_frame_tag "other_id" %>
