@@ -5,4 +5,8 @@ export default class extends Controller {
   connect() {
     console.log("TestController: Connected!");
   }
+
+  hello() {
+    console.log("TestController: Button Clicked, Hello!");
+  }
 }
