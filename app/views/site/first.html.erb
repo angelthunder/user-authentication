@@ -31,7 +31,11 @@
 <hr />
 <%= turbo_frame_tag "other_id" %>
 
-<div id="stimulus_test_id" data-controller="test">
+<div
+  id="stimulus_test_id"
+  data-controller="test"
+  data-test-my-element-class="bg-black mt-4"
+>
   <input type="text" data-test-target="text" />
 
   <button data-action="click->test#hello">Click Me!</button>

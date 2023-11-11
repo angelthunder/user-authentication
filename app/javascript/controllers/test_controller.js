@@ -3,9 +3,16 @@ import { Controller } from "@hotwired/stimulus";
 // Connects to data-controller="test"
 export default class extends Controller {
   static targets = ["text"];
+  static classes = ["myElement"];
 
   connect() {
     console.log("TestController: Connected!");
+    console.log(
+      "Classes: ",
+      this.myElementClass,
+      this.myElementClasses,
+      this.hasMyElementClass,
+    );
   }
 
   hello() {
