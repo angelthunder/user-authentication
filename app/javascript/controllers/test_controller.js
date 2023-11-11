@@ -12,4 +12,12 @@ export default class extends Controller {
     console.log("TestController: Button Clicked, Hello!");
     console.log("TestController: You typed: " + this.textTarget.value);
   }
+
+  textTargetConnected() {
+    console.log("TestController: @text property was connected...");
+  }
+
+  textTargetDisconnected() {
+    console.log("TestController: @text property was disconnected...");
+  }
 }
