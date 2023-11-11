@@ -32,5 +32,7 @@
 <%= turbo_frame_tag "other_id" %>
 
 <div id="stimulus_test_id" data-controller="test">
+  <input type="text" data-test-target="text" />
+
   <button data-action="click->test#hello">Click Me!</button>
 </div>
